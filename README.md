@@ -18,7 +18,7 @@ The goal is not just to solve problems, but to build strong **problem-solving an
 | 04 | Linked List | ⏳ Coming Soon |
 | 05 | Stack | ⏳ Coming Soon |
 | 06 | Queue | ⏳ Coming Soon |
-| 07 | Binary Search | ⏳ Coming Soon |
+| 07 | Binary Search | 🔄 In Progress |
 | 08 | Recursion | ⏳ Coming Soon |
 | 09 | Trees | ⏳ Coming Soon |
 | 10 | Graphs | ⏳ Coming Soon |
@@ -51,9 +51,9 @@ For every problem, I try to understand:
 
 ## 📊 Progress
 
-**Problems Solved:** 0
+**Problems Solved:** 1
 
-**Current Focus:** Arrays
+**Current Focus:** Binary Search
 
 > Consistency over perfection.
 
