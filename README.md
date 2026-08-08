@@ -71,8 +71,8 @@ For every problem, I try to understand:
 
 ## 🔗 Coding Profile
 
-- LeetCode: [Add your profile link]
-- LinkedIn: [Add your LinkedIn profile link]
+- LeetCode: https://leetcode.com/u/J6b11F1MNo/
+- LinkedIn: https://www.linkedin.com/in/iamsintukumar/
 
 ---
 
