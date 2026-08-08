@@ -61,3 +61,8 @@ Useful for efficiently calculating range sums.
 My goal is to understand **why** a particular approach works instead of simply memorizing solutions.
 
 > Solve → Understand → Optimize → Document 🚀
+## Problems Solved
+
+| # | Problem | Difficulty | Pattern | Solution |
+|---|---|---|---|---|
+| 125 | Valid Palindrome | Easy | Two Pointers | [Java](./ValidPalindrome.java) |
