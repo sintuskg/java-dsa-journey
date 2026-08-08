@@ -1,5 +1,19 @@
 public class ValidPalindrome {
 
+    /*
+     * LeetCode #125 - Valid Palindrome
+     *
+     * Approach:
+     * Use two pointers, one starting from the left
+     * and the other starting from the right.
+     *
+     * Ignore non-alphanumeric characters and compare
+     * characters without considering their case.
+     *
+     * Time Complexity: O(n)
+     * Space Complexity: O(1)
+     */
+
     public static boolean isPalindrome(String s) {
 
         int left = 0;
