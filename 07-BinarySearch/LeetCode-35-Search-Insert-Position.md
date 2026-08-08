@@ -1,67 +1,44 @@
-# LeetCode 35 — Search Insert Position
+# 🔎 Binary Search
 
-**Difficulty:** Easy  
-**Topic:** Binary Search  
-**Language:** Java
+Binary Search is an efficient searching technique used on sorted data.
 
-## Problem
+This section contains Java Binary Search problems that I solve while preparing for coding interviews.
 
-Given a sorted array of distinct integers and a target value, return the index if the target is found. If it is not found, return the index where it would be inserted in order.
+---
 
-## Approach
+## 📚 Concepts Covered
 
-Use **Binary Search** because the array is sorted.
+- Binary Search Basics
+- Sorted Arrays
+- Search Space Reduction
+- Two Pointer Boundaries
+- Finding Target Position
+- Common Interview Problems
 
-1. Set `left = 0` and `right = nums.length - 1`.
-2. Find the middle index using `left + (right - left) / 2`.
-3. If `nums[mid] == target`, return `mid`.
-4. If `nums[mid] < target`, search the right half by moving `left` to `mid + 1`.
-5. Otherwise, search the left half by moving `right` to `mid - 1`.
-6. When the loop ends, `left` is exactly the position where the target should be inserted.
+---
 
-## Java Solution
+## 🧩 Problems
 
-```java
-class Solution {
-    public int searchInsert(int[] nums, int target) {
-        int left = 0, right = nums.length - 1;
+| # | Problem | Difficulty | Pattern | Solution |
+|---|---|---|---|---|
+| 35 | Search Insert Position | Easy | Binary Search | [Java](./LeetCode-35-Search-Insert-Position.java) |
 
-        while (left <= right) {
-            int mid = left + (right - left) / 2;
+---
 
-            if (nums[mid] == target)
-                return mid;
-            else if (nums[mid] < target)
-                left = mid + 1;
-            else
-                right = mid - 1;
-        }
+## 💡 Important Techniques
 
-        return left;
-    }
-}
-```
+### 1. Binary Search
 
-## Complexity
+Useful for efficiently searching in sorted arrays by repeatedly reducing the search space by half.
 
-- **Time:** `O(log n)`
-- **Space:** `O(1)`
+### 2. Search Insert Position
 
-## Key Learning
+When the target is not found, the `left` pointer represents the position where the target should be inserted while maintaining sorted order.
 
-The important idea is that after binary search finishes, `left` points to the first position where the target can be inserted without breaking the sorted order.
+---
 
-### Example
+## 🎯 Learning Goal
 
-```text
-nums = [1, 3, 5, 6]
-target = 2
+My goal is to understand **why** a particular approach works instead of simply memorizing solutions.
 
-Answer = 1
-```
-
-`2` should be inserted between `1` and `3`, so index `1` is returned.
-
-## LeetCode
-
-Problem #35 — Search Insert Position
+> Solve → Understand → Optimize → Document 🚀
