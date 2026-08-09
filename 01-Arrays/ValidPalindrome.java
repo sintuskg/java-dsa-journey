@@ -1,58 +1,30 @@
-public class ValidPalindrome {
+class Solution {
+    public boolean isPalindrome(String s) {
+        int i = 0;
+        int j = s.length() - 1;
 
-    /*
-     * LeetCode #125 - Valid Palindrome
-     *
-     * Approach:
-     * Use two pointers, one starting from the left
-     * and the other starting from the right.
-     *
-     * Ignore non-alphanumeric characters and compare
-     * characters without considering their case.
-     *
-     * Time Complexity: O(n)
-     * Space Complexity: O(1)
-     */
+        while (i < j) {
+            char left = s.charAt(i);
+            char right = s.charAt(j);
 
-    public static boolean isPalindrome(String s) {
-
-        int left = 0;
-        int right = s.length() - 1;
-
-        while (left < right) {
-
-            char leftChar = s.charAt(left);
-            char rightChar = s.charAt(right);
-
-            // Skip non-alphanumeric characters from left
-            if (!Character.isLetterOrDigit(leftChar)) {
-                left++;
+            if (!Character.isLetterOrDigit(left)) {
+                i++;
                 continue;
             }
 
-            // Skip non-alphanumeric characters from right
-            if (!Character.isLetterOrDigit(rightChar)) {
-                right--;
+            if (!Character.isLetterOrDigit(right)) {
+                j--;
                 continue;
             }
 
-            // Compare characters ignoring case
-            if (Character.toLowerCase(leftChar)
-                    != Character.toLowerCase(rightChar)) {
+            if (Character.toLowerCase(left) != Character.toLowerCase(right)) {
                 return false;
             }
 
-            left++;
-            right--;
+            i++;
+            j--;
         }
 
         return true;
-    }
-
-    public static void main(String[] args) {
-
-        String input = "A man, a plan, a canal: Panama";
-
-        System.out.println(isPalindrome(input));
     }
 }
