@@ -51,9 +51,9 @@ For every problem, I try to understand:
 
 ## 📊 Progress
 
-**Problems Solved:** 1
+**Problems Solved:** 2
 
-**Current Focus:** Binary Search
+**Current Focus:** Arrays
 
 > Consistency over perfection.
 
