@@ -1,71 +1,48 @@
-# LeetCode 88 — Merge Sorted Array
+# 🔎 LeetCode 88 — Merge Sorted Array
 
-## Problem
+Merge Sorted Array is an array problem based on the **Three Pointer** technique and in-place merging.
 
-Given two sorted integer arrays `nums1` and `nums2`, merge `nums2` into `nums1` as one sorted array.
+This problem is part of my Java DSA journey while preparing for coding interviews.
 
-`nums1` has enough extra space at the end to hold all elements of `nums2`.
+---
 
-## Approach — Three Pointers
+## 📚 Concepts Covered
 
-Use three pointers from the **end** of the arrays:
+- Sorted Arrays
+- Three Pointer Technique
+- In-Place Modification
+- Reverse Traversal
+- Array Merging
+- Boundary Management
 
-- `i` → last valid element of `nums1`
-- `j` → last element of `nums2`
-- `k` → last position of `nums1`
+---
 
-Compare `nums1[i]` and `nums2[j]` and place the larger element at `nums1[k]`.
+## 🧩 Problem
 
-Working from the end prevents overwriting elements in `nums1` that still need to be compared.
+| # | Problem | Difficulty | Pattern | Solution |
+|---|---|---|---|---|
+| 88 | Merge Sorted Array | Easy | Three Pointers | [Java](./LeetCode-88-Merge-Sorted-Array.java) |
 
-After the main loop, if elements remain in `nums2`, copy them into `nums1`.
+---
 
-## Java Solution
+## 💡 Important Techniques
 
-```java
-class Solution {
-    public void merge(int[] nums1, int m, int[] nums2, int n) {
-        int i = m - 1;
-        int j = n - 1;
-        int k = m + n - 1;
+### 1. Three Pointer
 
-        while (i >= 0 && j >= 0) {
-            if (nums1[i] > nums2[j]) {
-                nums1[k] = nums1[i];
-                i--;
-            } else {
-                nums1[k] = nums2[j];
-                j--;
-            }
-            k--;
-        }
+Use pointers for the last valid element of `nums1`, the last element of `nums2`, and the last available position in `nums1`.
 
-        while (j >= 0) {
-            nums1[k] = nums2[j];
-            k--;
-            j--;
-        }
-    }
-}
-```
+### 2. Reverse Traversal
 
-## Example
+Start from the end so that existing elements in `nums1` are not overwritten before they are compared.
 
-**Input:**
+### 3. In-Place Merge
 
-`nums1 = [1,2,3,0,0,0], m = 3`
+The result is stored directly inside `nums1`, so no extra array is required.
 
-`nums2 = [2,5,6], n = 3`
+---
 
-**Output:**
+## 🎯 Learning Goal
 
-`[1,2,2,3,5,6]`
+My goal is to understand **why** merging from the back is necessary instead of simply memorizing the solution.
 
-## Complexity
-
-- **Time Complexity:** `O(m + n)`
-- **Space Complexity:** `O(1)`
-
-## Key Learning
-
-When merging sorted arrays in-place, processing from the **back** allows us to use the empty space in `nums1` without overwriting useful elements.
+> Solve → Understand → Optimize → Document 🚀
