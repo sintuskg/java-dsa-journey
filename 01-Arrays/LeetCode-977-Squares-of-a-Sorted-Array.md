@@ -1,67 +1,48 @@
-# LeetCode 977 — Squares of a Sorted Array
+# 🔎 LeetCode 977 — Squares of a Sorted Array
 
-## Problem
+Squares of a Sorted Array is an array problem based on the **Two Pointer** technique.
 
-Given an integer array `nums` sorted in non-decreasing order, return an array of the squares of each number, also sorted in non-decreasing order.
+This problem is part of my Java DSA journey while preparing for coding interviews.
 
-## Approach — Two Pointers
+---
 
-Because the input is already sorted, the largest square must come from either the leftmost negative value or the rightmost positive value.
+## 📚 Concepts Covered
 
-We use two pointers:
+- Sorted Arrays
+- Two Pointer Technique
+- Absolute Values
+- Reverse Filling
+- Array Traversal
+- In-Place Pointer Management
 
-- `i` starts at the beginning.
-- `j` starts at the end.
-- `k` fills the result array from right to left.
+---
 
-At every step, compare `Math.abs(nums[i])` and `Math.abs(nums[j])`. Put the larger square at `res[k]`, then move the corresponding pointer.
+## 🧩 Problem
 
-This avoids sorting the squared values separately.
+| # | Problem | Difficulty | Pattern | Solution |
+|---|---|---|---|---|
+| 977 | Squares of a Sorted Array | Easy | Two Pointers | [Java](./LeetCode-977-Squares-of-a-Sorted-Array.java) |
 
-## Java Solution
+---
 
-```java
-class Solution {
-    public int[] sortedSquares(int[] nums) {
-        int[] res = new int[nums.length];
+## 💡 Important Techniques
 
-        int i = 0;
-        int j = nums.length - 1;
-        int k = nums.length - 1;
+### 1. Two Pointer
 
-        while (i <= j) {
-            if (Math.abs(nums[i]) > Math.abs(nums[j])) {
-                res[k] = nums[i] * nums[i];
-                i++;
-            } else {
-                res[k] = nums[j] * nums[j];
-                j--;
-            }
-            k--;
-        }
+Use one pointer at the beginning and another at the end because the largest square can come from either end of a sorted array containing negative numbers.
 
-        return res;
-    }
-}
-```
+### 2. Compare Absolute Values
 
-## Example
+Compare `Math.abs(nums[i])` and `Math.abs(nums[j])` to determine which value produces the larger square.
 
-Input:
+### 3. Fill From the End
 
-`[-4, -1, 0, 3, 10]`
+Place the largest square at the last available position and move backward through the result array.
 
-Output:
+---
 
-`[0, 1, 9, 16, 100]`
+## 🎯 Learning Goal
 
-## Complexity
+My goal is to understand **why** comparing both ends gives the correct sorted order instead of simply memorizing the solution.
 
-- **Time:** `O(n)`
-- **Space:** `O(n)` for the result array
-
-## Key Learning
-
-When an array is sorted but contains negative values, squaring can destroy the sorted order. Comparing absolute values from both ends allows us to build the final sorted result in linear time.
-
-**Pattern:** Two Pointers → Fill Result from Right to Left
+> Solve → Understand → Optimize → Document 🚀
