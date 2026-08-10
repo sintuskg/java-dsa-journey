@@ -1,33 +1,67 @@
-class Solution {
-    public boolean palindromeHelper(int i, int j, String s) {
-        while (i < j) {
-            if (s.charAt(i) != s.charAt(j)) {
+/*
+ * LeetCode #680 - Valid Palindrome II
+ *
+ * Approach:
+ * Two Pointer + Helper Method
+ *
+ * We use two pointers:
+ * left  -> starts from the beginning
+ * right -> starts from the end
+ *
+ * When a mismatch is found, we can delete at most one character.
+ * Therefore, we check both possibilities:
+ * 1. Skip the left character
+ * 2. Skip the right character
+ *
+ * Time Complexity: O(n)
+ * Space Complexity: O(1)
+ */
+
+public class ValidPalindromeII {
+
+    public static boolean palindromeHelper(int left, int right, String s) {
+
+        while (left < right) {
+
+            if (s.charAt(left) != s.charAt(right)) {
                 return false;
             }
-            i++;
-            j--;
+
+            left++;
+            right--;
         }
+
         return true;
     }
 
-    public boolean validPalindrome(String s) {
-        int i = 0;
-        int j = s.length() - 1;
+    public static boolean validPalindrome(String s) {
 
-        while (i < j) {
-            char left = s.charAt(i);
-            char right = s.charAt(j);
+        int left = 0;
+        int right = s.length() - 1;
 
-            if (left != right) {
-                // Delete one element and check both possibilities.
-                return palindromeHelper(i + 1, j, s)
-                        || palindromeHelper(i, j - 1, s);
-            } else {
-                i++;
-                j--;
+        while (left < right) {
+
+            char leftChar = s.charAt(left);
+            char rightChar = s.charAt(right);
+
+            if (leftChar != rightChar) {
+
+                // Delete one element and check both possibilities
+                return palindromeHelper(left + 1, right, s)
+                        || palindromeHelper(left, right - 1, s);
             }
+
+            left++;
+            right--;
         }
 
         return true;
+    }
+
+    public static void main(String[] args) {
+
+        String input = "abca";
+
+        System.out.println(validPalindrome(input));
     }
 }
