@@ -1,75 +1,48 @@
-# LeetCode 680 — Valid Palindrome II
+# 🔎 LeetCode 680 — Valid Palindrome II
 
-## Problem
+Valid Palindrome II is a string problem based on the **Two Pointer** technique with one allowed deletion.
 
-Given a string `s`, return `true` if the string can become a palindrome after deleting **at most one character**.
+This problem is part of my Java DSA journey while preparing for coding interviews.
 
-## Approach — Two Pointers + Helper
+---
 
-Use two pointers:
+## 📚 Concepts Covered
 
-- `i` starts from the beginning.
-- `j` starts from the end.
-- Compare characters from both ends.
-- If they match, move both pointers inward.
-- If they do not match, we can delete at most one character, so check both possibilities:
-  - Skip the left character: `i + 1, j`
-  - Skip the right character: `i, j - 1`
-- The helper method checks whether the remaining substring is a palindrome.
+- String Traversal
+- Two Pointer Technique
+- Palindrome Checking
+- At Most One Deletion
+- Helper Method
+- Boundary Management
 
-## Java Solution
+---
 
-```java
-class Solution {
-    public boolean palindromeHelper(int i, int j, String s) {
-        while (i < j) {
-            if (s.charAt(i) != s.charAt(j)) {
-                return false;
-            }
-            i++;
-            j--;
-        }
-        return true;
-    }
+## 🧩 Problem
 
-    public boolean validPalindrome(String s) {
-        int i = 0;
-        int j = s.length() - 1;
+| # | Problem | Difficulty | Pattern | Solution |
+|---|---|---|---|---|
+| 680 | Valid Palindrome II | Easy | Two Pointers | [Java](./LeetCode-680-Valid-Palindrome-II.java) |
 
-        while (i < j) {
-            char left = s.charAt(i);
-            char right = s.charAt(j);
+---
 
-            if (left != right) {
-                return palindromeHelper(i + 1, j, s)
-                        || palindromeHelper(i, j - 1, s);
-            } else {
-                i++;
-                j--;
-            }
-        }
+## 💡 Important Techniques
 
-        return true;
-    }
-}
-```
+### 1. Two Pointer
 
-## Example
+Compare characters from both ends and move the pointers toward the center while the characters match.
 
-**Input:** `"abca"`
+### 2. One Deletion
 
-At the first mismatch, either `b` or `c` can be deleted:
+When the first mismatch occurs, only two possibilities need to be checked: delete the left character or delete the right character.
 
-- Delete `b` → `aca` → palindrome
-- Delete `c` → `aba` → palindrome
+### 3. Helper Method
 
-**Output:** `true`
+The helper method checks whether the remaining range is a palindrome without creating another string.
 
-## Complexity
+---
 
-- **Time Complexity:** `O(n)`
-- **Space Complexity:** `O(1)`
+## 🎯 Learning Goal
 
-## Key Learning
+My goal is to understand **why** checking both deletion possibilities works instead of simply memorizing the solution.
 
-This problem combines the **Two Pointer technique** with a small helper check. When the first mismatch occurs, only two deletion choices are possible, so both can be checked efficiently.
+> Solve → Understand → Optimize → Document 🚀
