@@ -1,4 +1,4 @@
-# 🔎 Binary Search
+# 🔎 Binary Search — LeetCode 35: Search Insert Position
 
 Binary Search is an efficient searching technique used on sorted data.
 
