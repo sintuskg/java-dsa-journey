@@ -13,7 +13,7 @@ The goal is not just to solve problems, but to build strong **problem-solving an
 | # | Topic | Status |
 |---|---|---|
 | 01 | Arrays | 🔄 In Progress |
-| 02 | Strings | ⏳ Coming Soon |
+| 02 | Strings | 🔄 In Progress |
 | 03 | Hashing | ⏳ Coming Soon |
 | 04 | Linked List | ⏳ Coming Soon |
 | 05 | Stack | ⏳ Coming Soon |
