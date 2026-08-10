@@ -1,60 +1,48 @@
-# LeetCode 125 — Valid Palindrome
+# 🔎 LeetCode 125 — Valid Palindrome
 
-## Problem
+Valid Palindrome is a string problem based on the **Two Pointer** technique.
 
-Given a string `s`, determine whether it is a palindrome, considering only alphanumeric characters and ignoring case.
+This problem is part of my Java DSA journey while preparing for coding interviews.
 
-## Approach — Two Pointers
+---
 
-Use two pointers:
+## 📚 Concepts Covered
 
-- `i` starts from the beginning.
-- `j` starts from the end.
-- Skip characters that are not letters or digits.
-- Compare both characters after converting them to lowercase.
-- If they are different, return `false`.
-- Move both pointers toward the center.
+- String Traversal
+- Character Validation
+- Case Insensitive Comparison
+- Two Pointer Technique
+- Palindrome Checking
+- Ignoring Non-Alphanumeric Characters
 
-## Java Solution
+---
 
-```java
-class Solution {
-    public boolean isPalindrome(String s) {
-        int i = 0;
-        int j = s.length() - 1;
+## 🧩 Problem
 
-        while (i < j) {
-            char left = s.charAt(i);
-            char right = s.charAt(j);
+| # | Problem | Difficulty | Pattern | Solution |
+|---|---|---|---|---|
+| 125 | Valid Palindrome | Easy | Two Pointers | [Java](./LeetCode-125-Valid-Palindrome.java) |
 
-            if (!Character.isLetterOrDigit(left)) {
-                i++;
-                continue;
-            }
+---
 
-            if (!Character.isLetterOrDigit(right)) {
-                j--;
-                continue;
-            }
+## 💡 Important Techniques
 
-            if (Character.toLowerCase(left) != Character.toLowerCase(right)) {
-                return false;
-            }
+### 1. Two Pointer
 
-            i++;
-            j--;
-        }
+Use one pointer from the beginning and another from the end, then move both toward the center.
 
-        return true;
-    }
-}
-```
+### 2. Character Validation
 
-## Complexity
+Use `Character.isLetterOrDigit()` to ignore spaces, punctuation, and other non-alphanumeric characters.
 
-- **Time Complexity:** `O(n)`
-- **Space Complexity:** `O(1)`
+### 3. Case Insensitive Comparison
 
-## Key Learning
+Use `Character.toLowerCase()` so uppercase and lowercase characters are treated equally.
 
-This problem demonstrates the **Two Pointer technique** for processing a string efficiently without creating an extra cleaned string.
+---
+
+## 🎯 Learning Goal
+
+My goal is to understand **why** the Two Pointer approach works instead of simply memorizing the solution.
+
+> Solve → Understand → Optimize → Document 🚀
