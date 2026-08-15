@@ -15,7 +15,7 @@ The goal is not just to solve problems, but to build strong **problem-solving an
 | 01 | Arrays | 🔄 In Progress |
 | 02 | Strings | 🔄 In Progress |
 | 03 | Hashing | ⏳ Coming Soon |
-| 04 | Linked List | ⏳ Coming Soon |
+| 04 | Linked List | 🔄 In Progress |
 | 05 | Stack | ⏳ Coming Soon |
 | 06 | Queue | ⏳ Coming Soon |
 | 07 | Binary Search | 🔄 In Progress |
