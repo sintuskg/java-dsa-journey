@@ -46,6 +46,13 @@ Each recursive call waits for the result of the next two recursive calls before 
 
 This creates a recursive call tree and makes the basic recursive solution expensive for larger values of `n`.
 
+### 4. Worst Case Complexity
+
+For this basic recursive solution:
+
+- **Worst Case Time Complexity:** `O(2^n)`
+- **Worst Case Space Complexity:** `O(n)` because of the recursive call stack.
+
 ---
 
 ## 🎯 Learning Goal
