@@ -14,8 +14,8 @@
  * For every n greater than 1, we recursively calculate the
  * previous two Fibonacci numbers and add them together.
  *
- * Time Complexity: O(2^n)
- * Space Complexity: O(n)
+ * Worst Case Time Complexity: O(2^n)
+ * Worst Case Space Complexity: O(n)
  */
 
 public class FibonacciNumber {
